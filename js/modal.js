@@ -1,4 +1,4 @@
-const moreElem = document.querySelector('.more');
+const moreElems = document.querySelectorAll('.more');
 const modalElem = document.querySelector('.modal');
 
 const openModal = () => {
@@ -10,7 +10,11 @@ const closeModal = () => {
 
 }
 
-moreElem.addEventListener('click', openModal);
+moreElems.forEach((btn) => {
+    btn.addEventListener('click', openModal)
+})
+
+// moreElem.addEventListener('click', openModal);
 modalElem.addEventListener('click', (event) => {
     const target = event.target;
     if (target.classList.contains('overlay') || 
